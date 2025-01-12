@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics Software Engineer</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #f4f4f9;
+            position: relative;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 2rem 0 1rem;
+            color: #2c3e50;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background: #2c3e50;
+            padding: 0.5rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: #8e44ad;
+        }
+
+        /* Terminal Styles */
+        .terminal {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            white-space: pre-wrap;
+            height: 120px;
+        }
+
+        .terminal .green {
+            color: #27ae60; /* Terminal green color */
+        }
+
+        .terminal span {
+            color: #8e44ad;
+        }
+
+        /* Section Styles */
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #8e44ad;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        section ul li {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        section ul li::before {
+            content: '>';
+            color: #8e44ad;
+            position: absolute;
+            left: 0;
+        }
+
+        a {
+            color: #8e44ad;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .robot {
+    position: absolute;
+    left: 0;
+    top: 19%; /* Postavlja robota na sredinu vertikalno */
+    transform: translateY(-50%); /* Centriranje robota u odnosu na visinu */
+    width: 100px;
+    transition: all 2s ease-in-out;
+}
+
+.robot.move-to-terminal {
+    left: 15%;
+    top: 19%; /* Održava robota u istoj ravni kao terminal */
+    transform: translateY(-50%);
+}
+
+.robot.move-back {
+    left: 0;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .robot {
+        display: none; /* Sakrij robota na mobilnim uređajima */
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Robotics Software Engineer</h1>
+            <p>Innovative solutions for robotics and automation challenges.</p>
+        </div>
+    </header>
+
+    
+    <div>
+        <img src="robot.png" alt="Robot" class="robot" id="robot">
+        <div class="container">
+            <div class="terminal" id="terminal">
+            </div>
+        </div>
+    </div>
+   
+
+    
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+      <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>I am a Robotics Software Engineer with a passion for solving complex problems in robotics and automation. My expertise includes developing advanced algorithms, integrating hardware systems, and creating scalable robotics solutions.</p>
+    </section>
+
+    <section id="skills" class="container">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming: Python, C++, Java</li>
+            <li>Frameworks: ROS2, Isaac Sim, Webots</li>
+            <li>Machine Learning: YOLO, Diffusion Models</li>
+            <li>Hardware: Jetson Nano, Raspberry Pi, Arduino</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Autonomous Vehicle:</strong> Sign and lane detection using YOLO and OpenCV.</li>
+            <li><strong>Robot Manipulator Control:</strong> Developed xArm control using ROS2 and Isaac Sim.</li>
+            <li><strong>Eurobot Competition:</strong> Behavior Tree-based robotic platform with sensor integration.</li>
+        </ul>
+    </section>
+
+    <section id="education" class="container">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>Master's Degree in Artificial Intelligence</strong>, University of Example (2024-Present)</li>
+            <li><strong>Bachelor's Degree in Software Engineering</strong>, University of Example (2020-2024)</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p>Let's connect to build the future of robotics!</p>
+        <ul>
+            <li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
+            <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Robotics Software Engineer. Designed with passion for robotics.</p>
+        </div>
+    </footer>
+
+    <script>
+        const terminal = document.getElementById("terminal");
+        const robot = document.getElementById("robot");
+        terminal.innerHTML = '';
+        terminal.innerHTML += "<br><br><span><b>Welcome:</b> </span>";
+        
+        const text = "Hello! I'm excited to share my journey in robotics with you. Feel free to explore my projects, skills, and contact information below.";
+        let index = 0;
+        
+        function typeText() {
+            if (index < text.length) {
+                terminal.innerHTML += text[index];
+                index++;
+                setTimeout(typeText, 30);
+            } else {
+                robot.classList.add('move-to-terminal');
+                setTimeout(restartText, 2000);  // Delay before restarting the text animation
+            }
+        }
+    
+        function restartText() {
+            terminal.innerHTML = '';
+            terminal.innerHTML += "<br><br><span><b>Welcome:</b> </span>";
+            index = 0; 
+            robot.classList.remove('move-to-terminal');
+            robot.classList.add('move-back');
+            setTimeout(() => {
+                robot.classList.remove('move-back');
+                typeText();  // Restart the typing animation after robot movement
+            }, 1000); // Wait for robot to return before starting the text animation again
+        }
+    
+        typeText();
+
+
+        
+    </script>
+    
+</body>
+</html>
+
