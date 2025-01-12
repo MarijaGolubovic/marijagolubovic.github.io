@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,10 @@
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            color: #333;
-            background: #f4f4f9;
+            color: #333D51;
+            /* Dark blue-gray */
+            background: #f8f8f8;
+            /* Light beige background */
             position: relative;
         }
 
@@ -25,12 +28,14 @@
         header {
             text-align: center;
             padding: 2rem 0 1rem;
-            color: #2c3e50;
+            color: #333D51;
         }
 
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
+            color: #D3AC2B;
+            /* Golden yellow */
         }
 
         header p {
@@ -39,7 +44,8 @@
 
         /* Navigation Styles */
         nav {
-            background: #2c3e50;
+            background: #333D51;
+            /* Dark blue-gray */
             padding: 0.5rem 0;
         }
 
@@ -56,19 +62,23 @@
         }
 
         nav ul li a {
-            color: #ecf0f1;
+            color: #CBD0D8;
+            /* Light gray */
             text-decoration: none;
             font-size: 1.1rem;
         }
 
         nav ul li a:hover {
-            color: #8e44ad;
+            color: #D3AC2B;
+            /* Golden yellow */
         }
 
         /* Terminal Styles */
         .terminal {
-            background: #2c3e50;
-            color: #ecf0f1;
+            background: #333D51;
+            /* Dark blue-gray */
+            color: #CBD0D8;
+            /* Light gray */
             padding: 1.5rem;
             border-radius: 10px;
             margin: 1rem 0;
@@ -80,16 +90,19 @@
         }
 
         .terminal .green {
-            color: #27ae60; /* Terminal green color */
+            color: #27ae60;
+            /* Terminal green color */
         }
 
         .terminal span {
-            color: #8e44ad;
+            color: #D3AC2B;
+            /* Golden yellow */
         }
 
         /* Section Styles */
         section {
-            background: white;
+            background: #fdfdfd;
+            /* Light beige */
             border-radius: 10px;
             padding: 2rem;
             margin: 2rem 0;
@@ -97,9 +110,11 @@
         }
 
         section h2 {
-            color: #2c3e50;
+            color: #333D51;
+            /* Dark blue-gray */
             font-size: 1.8rem;
-            border-bottom: 3px solid #8e44ad;
+            border-bottom: 3px solid #D3AC2B;
+            /* Golden yellow */
             display: inline-block;
             margin-bottom: 1rem;
         }
@@ -123,13 +138,15 @@
 
         section ul li::before {
             content: '>';
-            color: #8e44ad;
+            color: #D3AC2B;
+            /* Golden yellow */
             position: absolute;
             left: 0;
         }
 
         a {
-            color: #8e44ad;
+            color: #D3AC2B;
+            /* Golden yellow */
             text-decoration: none;
         }
 
@@ -139,8 +156,10 @@
 
         /* Footer Styles */
         footer {
-            background: #2c3e50;
-            color: #ecf0f1;
+            background: #333D51;
+            /* Dark blue-gray */
+            color: #CBD0D8;
+            /* Light gray */
             text-align: center;
             padding: 1rem 0;
             margin-top: 2rem;
@@ -150,33 +169,35 @@
             margin: 0;
         }
 
+        /* Robot Styles */
         .robot {
-    position: absolute;
-    left: 0;
-    top: 19%; /* Postavlja robota na sredinu vertikalno */
-    transform: translateY(-50%); /* Centriranje robota u odnosu na visinu */
-    width: 100px;
-    transition: all 2s ease-in-out;
-}
+            position: absolute;
+            left: 0;
+            top: 19%;
+            transform: translateY(-50%);
+            width: 100px;
+            transition: all 2s ease-in-out;
+        }
 
-.robot.move-to-terminal {
-    left: 15%;
-    top: 19%; /* Održava robota u istoj ravni kao terminal */
-    transform: translateY(-50%);
-}
+        .robot.move-to-terminal {
+            left: 15%;
+            top: 19%;
+            transform: translateY(-50%);
+        }
 
-.robot.move-back {
-    left: 0;
-}
+        .robot.move-back {
+            left: 0;
+        }
 
-/* Media Query for Mobile Devices */
-@media (max-width: 968px) {
-    .robot {
-        display: none; /* Sakrij robota na mobilnim uređajima */
-    }
-}
+        /* Media Query for Mobile Devices */
+        @media (max-width: 968px) {
+            .robot {
+                display: none;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -185,7 +206,7 @@
         </div>
     </header>
 
-    
+
     <div>
         <img src="robot.png" alt="Robot" class="robot" id="robot">
         <div class="container">
@@ -193,9 +214,9 @@
             </div>
         </div>
     </div>
-   
 
-    
+
+
 
     <nav>
         <div class="container">
@@ -209,9 +230,11 @@
         </div>
     </nav>
 
-      <section id="about" class="container">
+    <section id="about" class="container">
         <h2>About Me</h2>
-        <p>I am a Robotics Software Engineer with a passion for solving complex problems in robotics and automation. My expertise includes developing advanced algorithms, integrating hardware systems, and creating scalable robotics solutions.</p>
+        <p>I am a Robotics Software Engineer with a passion for solving complex problems in robotics and automation. My
+            expertise includes developing advanced algorithms, integrating hardware systems, and creating scalable
+            robotics solutions.</p>
     </section>
 
     <section id="skills" class="container">
@@ -247,7 +270,8 @@
         <ul>
             <li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
             <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
-            <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+            </li>
         </ul>
     </section>
 
@@ -262,10 +286,10 @@
         const robot = document.getElementById("robot");
         terminal.innerHTML = '';
         terminal.innerHTML += "<br><br><span><b>Welcome:</b> </span>";
-        
+
         const text = "Hello! I'm excited to share my journey in robotics with you. Feel free to explore my projects, skills, and contact information below.";
         let index = 0;
-        
+
         function typeText() {
             if (index < text.length) {
                 terminal.innerHTML += text[index];
@@ -276,11 +300,11 @@
                 setTimeout(restartText, 2000);  // Delay before restarting the text animation
             }
         }
-    
+
         function restartText() {
             terminal.innerHTML = '';
             terminal.innerHTML += "<br><br><span><b>Welcome:</b> </span>";
-            index = 0; 
+            index = 0;
             robot.classList.remove('move-to-terminal');
             robot.classList.add('move-back');
             setTimeout(() => {
@@ -288,13 +312,13 @@
                 typeText();  // Restart the typing animation after robot movement
             }, 1000); // Wait for robot to return before starting the text animation again
         }
-    
+
         typeText();
 
 
-        
-    </script>
-    
-</body>
-</html>
 
+    </script>
+
+</body>
+
+</html>
