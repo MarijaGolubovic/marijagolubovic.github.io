@@ -173,7 +173,7 @@
         .robot {
             position: absolute;
             left: 0;
-            top: 19%;
+            top: 16.5%;
             transform: translateY(-50%);
             width: 100px;
             transition: all 2s ease-in-out;
@@ -181,7 +181,7 @@
 
         .robot.move-to-terminal {
             left: 15%;
-            top: 19%;
+            top: 16.5%;
             transform: translateY(-50%);
         }
 
@@ -194,6 +194,81 @@
             .robot {
                 display: none;
             }
+        }
+
+        /* Project Section Styles */
+        #projects {
+            text-align: center;
+        }
+
+        .project-container {
+            position: relative;
+            width: 90%;
+            margin: 2rem auto;
+            overflow: hidden;
+        }
+
+        .project-list {
+            display: flex;
+            justify-content: flex-start;
+            transition: transform 0.5s ease;
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #333D51;
+            color: #f3c015;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            min-width: 250px;
+            min-height: 200pt;
+            text-align: center;
+        }
+
+        .project-card:hover {
+            background-color: #f3c015;
+            color: #333D51;
+        }
+
+        .buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        button {
+            background-color: transparent;
+            /* Transparent background */
+            color: #333D51;
+            /* Dark text color */
+            padding: 0.5rem 1rem;
+            /* Padding for size */
+            border: 2px solid #333D51;
+            /* Dark border */
+            cursor: pointer;
+            font-size: 1rem;
+            /* Font size */
+            border-radius: 5px;
+            /* Rounded corners */
+            transition: all 0.3s ease;
+            /* Smooth transition */
+            font-weight: normal;
+            /* Make text less bold */
+        }
+
+        button:hover {
+            background-color: #f3c015;
+            /* Golden background on hover */
+            color: #333D51;
+            /* Dark text color on hover */
+            border-color: #f3c015;
+            /* Change border color to match background */
         }
     </style>
 </head>
@@ -249,12 +324,25 @@
 
     <section id="projects" class="container">
         <h2>Projects</h2>
-        <ul>
-            <li><strong>Autonomous Vehicle:</strong> Sign and lane detection using YOLO and OpenCV.</li>
-            <li><strong>Robot Manipulator Control:</strong> Developed xArm control using ROS2 and Isaac Sim.</li>
-            <li><strong>Eurobot Competition:</strong> Behavior Tree-based robotic platform with sensor integration.</li>
-        </ul>
+        <div class="project-container">
+            <div class="project-list">
+                <div class="project-card">Autonomous Vehicle</div>
+                <div class="project-card">Robot Manipulator Control</div>
+                <div class="project-card">Eurobot Competition</div>
+                <div class="project-card">Advanced Manipulation</div>
+                <div class="project-card">Smart Navigation System</div>
+                <div class="project-card">Robotic Arm for Object Picking</div>
+                <div class="project-card">Machine Learning for Robotics</div>
+            </div>
+            <div class="buttons">
+                <button class="prev" onclick="moveCards('left')">&lt;</button>
+                <button class="next" onclick="moveCards('right')">&gt;</button>
+            </div>
+        </div>
     </section>
+
+
+
 
     <section id="education" class="container">
         <h2>Education</h2>
@@ -314,6 +402,42 @@
         }
 
         typeText();
+
+
+        let currentIndex = 0; // Track the current position of the cards
+        const maxIndex = 4; // Maximum number of visible cards (we show 3 or 4, depending on screen size)
+        const totalCards = document.querySelectorAll('.project-card').length;
+
+        // Function to move project cards left or right
+        function moveCards(direction) {
+            const projectList = document.querySelector('.project-list');
+            const cards = document.querySelectorAll('.project-card');
+
+            // Move the list by changing the translateX value based on currentIndex
+            if (direction === 'left' && currentIndex > 0) {
+                currentIndex--;
+            } else if (direction === 'right' && currentIndex < totalCards - maxIndex) {
+                currentIndex++;
+            }
+
+            const moveBy = -currentIndex * (cards[0].offsetWidth + 20); // Calculate how much to move
+            projectList.style.transform = `translateX(${moveBy}px)`;
+        }
+
+        // Function to handle scroll event to move cards left or right
+        document.querySelector('.project-container').addEventListener('wheel', function (e) {
+            const delta = e.deltaY || e.detail || e.wheelDelta;
+            if (delta > 0) {
+                moveCards('right');
+            } else {
+                moveCards('left');
+            }
+            e.preventDefault(); // Prevent the default scroll behavior
+        });
+
+
+
+
 
 
 
