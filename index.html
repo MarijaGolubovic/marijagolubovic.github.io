@@ -8,7 +8,7 @@
     <style>
         /* General Styles */
         body {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             color: #333D51;
@@ -83,10 +83,10 @@
             border-radius: 10px;
             margin: 1rem 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Fira Code', monospace;
             overflow: hidden;
             white-space: pre-wrap;
-            height: 120px;
+            height: 110px;
         }
 
         .terminal .green {
@@ -190,7 +190,7 @@
         }
 
         /* Media Query for Mobile Devices */
-        @media (max-width: 968px) {
+        @media (max-width: 1700px) {
             .robot {
                 display: none;
             }
@@ -220,7 +220,7 @@
             color: #f3c015;
             padding: 1rem 2rem;
             font-size: 1.5rem;
-            cursor: pointer;
+            cursor: auto;
             border-radius: 8px;
             transition: background-color 0.3s ease;
             min-width: 250px;
@@ -231,6 +231,11 @@
         .project-card:hover {
             background-color: #f3c015;
             color: #333D51;
+        }
+
+        .project-card-img {
+            width: 100%;
+            border-radius: 5px;
         }
 
         .buttons {
@@ -251,7 +256,7 @@
             /* Padding for size */
             border: 2px solid #333D51;
             /* Dark border */
-            cursor: auto;
+            cursor: pointer;
             font-size: 1rem;
             /* Font size */
             border-radius: 5px;
@@ -270,14 +275,22 @@
             border-color: #f3c015;
             /* Change border color to match background */
         }
+
+        .container p:last-child {
+            margin-top: 15px;
+            font-size: 1.2em;
+            /* Lagano povećanje fonta */
+            color: #555;
+            /* Suptilna siva boja */
+        }
     </style>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <h1>Robotics Software Engineer</h1>
-            <p>Innovative solutions for robotics and automation challenges.</p>
+            <h1>Marija Golubović</h1>
+            <h2>Robotics Software Engineer</h2>
         </div>
     </header>
 
@@ -305,12 +318,11 @@
         </div>
     </nav>
 
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>I am a Robotics Software Engineer with a passion for solving complex problems in robotics and automation. My
-            expertise includes developing advanced algorithms, integrating hardware systems, and creating scalable
-            robotics solutions.</p>
-    </section>
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>Hi, I'm Marija! I'm a Robotics Software Engineer with a love for robotics, AI, and automation. I enjoy experimenting with robots and creating smart solutions that help them think and act in the real world.</p>
+</section>
+
 
     <section id="skills" class="container">
         <h2>Skills</h2>
@@ -326,13 +338,39 @@
         <h2>Projects</h2>
         <div class="project-container">
             <div class="project-list">
-                <div class="project-card">Autonomous Vehicle</div>
-                <div class="project-card">Robot Manipulator Control</div>
-                <div class="project-card">Eurobot Competition</div>
-                <div class="project-card">Advanced Manipulation</div>
-                <div class="project-card">Smart Navigation System</div>
-                <div class="project-card">Robotic Arm for Object Picking</div>
-                <div class="project-card">Machine Learning for Robotics</div>
+                <div class="project-card">
+                    <img class="project-card-img" src="test.jpg" alt="Autonomous Vehicle">
+                    <p>Autonomous Vehicle</p>
+                </div>
+                <div class="project-card">
+                    <img class="project-card-img" src="test.jpg" src="test.jpg" alt="Robot Manipulator Control">
+                    <p>Robot Manipulator Control</p>
+                </div>
+                <div class="project-card">
+                    <img class="project-card-img" src="test.jpg" src="eurobot_competition.jpg"
+                        alt="Eurobot Competition">
+                    <p>Eurobot Competition</p>
+                </div>
+                <div class="project-card">
+                    <img class="project-card-img" src="test.jpg" src="advanced_manipulation.jpg"
+                        alt="Advanced Manipulation">
+                    <p>Advanced Manipulation</p>
+                </div>
+                <div class="project-card">
+                    <img class="project-card-img" src="test.jpg" src="smart_navigation.jpg"
+                        alt="Smart Navigation System">
+                    <p>Smart Navigation System</p>
+                </div>
+                <div class="project-card">
+                    <img class="project-card-img" src="test.jpg" src="robotic_arm.jpg"
+                        alt="Robotic Arm for Object Picking">
+                    <p>Robotic Arm for Object Picking</p>
+                </div>
+                <div class="project-card">
+                    <img class="project-card-img" src="test.jpg" src="ml_for_robotics.jpg"
+                        alt="Machine Learning for Robotics">
+                    <p>Machine Learning for Robotics</p>
+                </div>
             </div>
             <div class="buttons">
                 <button class="prev" onclick="moveCards('left')">&lt;</button>
@@ -340,6 +378,7 @@
             </div>
         </div>
     </section>
+
 
 
 
@@ -375,7 +414,7 @@
         terminal.innerHTML = '';
         terminal.innerHTML += "<br><br><span><b>Welcome:</b> </span>";
 
-        const text = "Hello! I'm excited to share my journey in robotics with you. Feel free to explore my projects, skills, and contact information below.";
+        const text = " I'm happy you're here! Feel free to check out my robotics projects, and contact me if you'd like to know more.";
         let index = 0;
 
         function typeText() {
@@ -434,8 +473,6 @@
             }
             e.preventDefault(); // Prevent the default scroll behavior
         });
-
-
 
 
 
