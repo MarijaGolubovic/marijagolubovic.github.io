@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marija Golubovic</title>
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -313,58 +313,69 @@
         /* Skills Section */
         .skills {
             text-align: center;
-            padding: 1.5rem 0.5rem;
-            /* Smanjen padding */
+            padding: 0.8rem 0.3rem;
+            /* Smanjen padding sekcije */
             background-color: #f4f4f4;
+            margin-bottom: 1.0rem;
+            /* Smanjena donja margina sekcije */
         }
 
         .skills h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             /* Smanjena veličina naslova */
             color: #333;
-            margin-bottom: 1.5rem;
-            /* Smanjena margina */
+            margin-bottom: 0.4rem;
+            /* Smanjena margina ispod naslova */
         }
 
         .skills-icons {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            /* Smanjeni minimum za kolone */
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            /* Smanjen minimum za kolone */
+            gap: 0.8rem;
             /* Smanjen razmak između ikonica */
         }
 
         .skill {
             text-align: center;
-            padding: 0.7rem;
-            /* Smanjen padding */
+            padding: 0.4rem;
+            /* Smanjen padding unutar svakog polja */
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            /* Lagano smanjeno zaobljenje */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            /* Lagano smanjen senka efekat */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 0.6rem;
+            /* Smanjena donja margina između svakog skill polja */
         }
 
         .skill:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+            /* Manje pomeranje pri hover efektu */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            /* Manje intenzivna senka pri hover efektu */
         }
 
         .skill i {
-            font-size: 2rem;
+            font-size: 1.8rem;
             /* Smanjena veličina ikonica */
             color: #f3c015;
-            /* margin-bottom: 0.2rem; */
             transition: color 0.3s ease;
         }
 
         .skill p {
-            font-size: 0.8rem;
+            font-size: 0.65rem;
+            /* Smanjena veličina opisa */
             color: #333;
+            margin-top: 0.2rem;
+            /* Dodata mala margina iznad opisa */
         }
 
         .skill:hover i {
             color: #333D51;
         }
+
 
         @media (max-width: 768px) {
             .skills h2 {
@@ -443,7 +454,15 @@
             </div>
             <div class="skill">
                 <i class="fas fa-cogs"></i>
-                <p>Webots/Isaac Sim</p>
+                <p>Webots Sim</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-cogs"></i>
+                <p>Isaac Sim</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-docker"></i> <!-- Ikonica za Docker -->
+                <p>Docker</p>
             </div>
             <div class="skill">
                 <i class="fab fa-python"></i>
@@ -451,11 +470,19 @@
             </div>
             <div class="skill">
                 <i class="fab fa-raspberry-pi"></i>
-                <p>Raspberry Pi/Arduino</p>
+                <p>Raspberry Pi</p>
             </div>
             <div class="skill">
                 <i class="fas fa-microchip"></i>
                 <p>FPGA</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-laptop-code"></i>
+                <p>Jetson Nano</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-microchip"></i>
+                <p>Arduino</p>
             </div>
             <div class="skill">
                 <i class="fab fa-html5"></i>
@@ -467,7 +494,7 @@
             </div>
             <div class="skill">
                 <i class="fab fa-linux"></i>
-                <p>Linux/Windows</p>
+                <p>Linux</p>
             </div>
             <div class="skill">
                 <i class="fab fa-git"></i>
@@ -479,15 +506,15 @@
             </div>
             <div class="skill">
                 <i class="fas fa-camera-retro"></i>
-                <p>RealSense Camera</p>
+                <p>Camera Integration</p>
             </div>
             <div class="skill">
-                <i class="fas fa-laptop-code"></i>
-                <p>Jetson Nano</p>
+                <i class="fas fa-plug"></i> <!-- Ikonica za povezivanje uređaja -->
+                <p>Hardware Integration</p>
             </div>
         </div>
     </section>
-    
+
 
 
     <section id="projects" class="container">
