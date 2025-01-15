@@ -250,19 +250,20 @@
             transform: translateY(-50%);
         }
 
+
         button {
             background-color: transparent;
             /* Transparent background */
-            color: #333D51;
+            color: #f3c015;
             /* Dark text color */
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.8rem;
             /* Padding for size */
-            border: 2px solid #333D51;
+            border: 2px solid #f3c015;
             /* Dark border */
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.5rem;
             /* Font size */
-            border-radius: 5px;
+            border-radius: 50px;
             /* Rounded corners */
             transition: all 0.3s ease;
             /* Smooth transition */
@@ -272,7 +273,7 @@
 
         button:hover {
             background-color: #f3c015;
-            /* Golden background on hover */
+            /* Golden yellow background on hover */
             color: #333D51;
             /* Dark text color on hover */
             border-color: #f3c015;
@@ -403,7 +404,7 @@
             <a href="https://github.com/yourusername" target="_blank" class="fab fa-github"></a>
             <a href="mailto:your-email@example.com" class="fas fa-envelope"></a>
             <a href="https://www.youtube.com/channel/yourchannel" target="_blank" class="fab fa-youtube"></a>
-            <a href="CV-fakultet.pdf" target="_blank"><strong>CV</strong></i></a>
+            <a href="path_to_your_cv.pdf" target="_blank"><strong>CV</strong></i></a>
         </div>
     </header>
 
@@ -556,8 +557,8 @@
                 </div>
             </div>
             <div class="buttons">
-                <button class="prev" onclick="moveCards('left')">&lt;</button>
-                <button class="next" onclick="moveCards('right')">&gt;</button>
+                <button class="prev" onclick="moveCards('left')">&larr;</button>
+                <button class="next" onclick="moveCards('right')">&rarr;</button>
             </div>
         </div>
     </section>
