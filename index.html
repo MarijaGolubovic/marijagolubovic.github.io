@@ -234,10 +234,15 @@
         .project-card p {
             color: #f3c015 !important;
         }
+
         .project-card:hover {
             background-color: #f3c015;
-            color: #333D51;
         }
+
+        .project-card:hover p {
+            color: #333D51 !important;
+        }
+
 
         .project-card-img {
             width: 100%;
@@ -653,7 +658,7 @@
         let offset = cards[0].offsetWidth;
         let cardWidth = cards[0].offsetWidth + 20;
         const dotsContainer = document.getElementById('dots');
-        const maxIndex = 4;
+        const maxIndex = 3;
 
         const dots = [];
 
