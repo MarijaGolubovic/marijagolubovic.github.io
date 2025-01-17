@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marija Golubovic</title>
+    <title>Marija Golubovic|Robotics Software Engineer</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -389,6 +389,26 @@
                 /* Dve kolone na manjim ekranima */
             }
         }
+
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: #bbb;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dot.active {
+            background-color: #f3c015;
+        }
     </style>
 </head>
 
@@ -560,6 +580,9 @@
                 <button class="prev" onclick="moveCards('left')">&larr;</button>
                 <button class="next" onclick="moveCards('right')">&rarr;</button>
             </div>
+            <div class="dots" id="dots">
+                <!-- Tačkice će biti dodate dinamički -->
+            </div>
         </div>
     </section>
 
@@ -627,24 +650,52 @@
         typeText();
 
 
-        let currentIndex = 0; // Track the current position of the cards
-        const maxIndex = 4; // Maximum number of visible cards (we show 3 or 4, depending on screen size)
+        // ***************************************************************
+        const cards = document.querySelectorAll('.project-card');
+        let offset = cards[0].offsetWidth;
+        let cardWidth = cards[0].offsetWidth + 20;
+        const dotsContainer = document.getElementById('dots');
+        const maxIndex = 4;
+
+        const dots = [];
+
+        const dotsNum = 3;
+
+        for (let i = 0; i < dotsNum; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            dotsContainer.appendChild(dot);
+            dots.push(dot);
+        }
+
+        function updateDots() {
+            dots.forEach(dot => dot.classList.remove('active'));
+            let width = cards[0].offsetWidth + 20;
+            dots[Math.floor(Math.abs(offset) / width)].classList.add('active');
+        }
+
+
+        let currentIndex = 0;
         const totalCards = document.querySelectorAll('.project-card').length;
 
         // Function to move project cards left or right
         function moveCards(direction) {
             const projectList = document.querySelector('.project-list');
-            const cards = document.querySelectorAll('.project-card');
+
 
             // Move the list by changing the translateX value based on currentIndex
             if (direction === 'left' && currentIndex > 0) {
                 currentIndex--;
+                offset += cardWidth;
+
             } else if (direction === 'right' && currentIndex < totalCards - maxIndex) {
                 currentIndex++;
+                offset -= cardWidth;
             }
 
             const moveBy = -currentIndex * (cards[0].offsetWidth + 20); // Calculate how much to move
             projectList.style.transform = `translateX(${moveBy}px)`;
+            updateDots();
         }
 
         // Function to handle scroll event to move cards left or right
@@ -652,11 +703,15 @@
             const delta = e.deltaY || e.detail || e.wheelDelta;
             if (delta > 0) {
                 moveCards('right');
+                updateDots();
             } else {
                 moveCards('left');
+                updateDots();
+
             }
             e.preventDefault(); // Prevent the default scroll behavior
         });
+        updateDots();
 
 
 
