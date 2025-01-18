@@ -8,416 +8,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333D51;
-            /* Dark blue-gray */
-            background: #f8f8f8;
-            /* Light beige background */
-            position: relative;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        /* Header Styles */
-        header {
-            text-align: center;
-            padding: 2rem 0 1rem;
-            color: #333D51;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: #f3c015;
-            /* Golden yellow */
-        }
-
-        header p {
-            font-size: 1.1rem;
-        }
-
-        /* Navigation Styles */
-        nav {
-            background: #333D51;
-            /* Dark blue-gray */
-            padding: 0.5rem 0;
-        }
-
-        nav ul {
-            list-style: none;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: #CBD0D8;
-            /* Light gray */
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
-
-        nav ul li a:hover {
-            color: #f3c015;
-            /* Golden yellow */
-        }
-
-        /* Terminal Styles */
-        .terminal {
-            background: #333D51;
-            /* Dark blue-gray */
-            color: #CBD0D8;
-            /* Light gray */
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-family: 'Fira Code', monospace;
-            overflow: hidden;
-            white-space: pre-wrap;
-            height: 110px;
-        }
-
-        .terminal .green {
-            color: #27ae60;
-            /* Terminal green color */
-        }
-
-        .terminal span {
-            color: #f3c015;
-            /* Golden yellow */
-        }
-
-        /* Section Styles */
-        section {
-            background: #fdfdfd;
-            /* Light beige */
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        section h2 {
-            color: #333D51;
-            /* Dark blue-gray */
-            font-size: 1.8rem;
-            border-bottom: 3px solid #f3c015;
-            /* Golden yellow */
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        section ul li {
-            margin: 0.5rem 0;
-            font-size: 1rem;
-            position: relative;
-            padding-left: 25px;
-        }
-
-        section ul li::before {
-            content: '>';
-            color: #f3c015;
-            /* Golden yellow */
-            position: absolute;
-            left: 0;
-        }
-
-        a {
-            color: #f3c015;
-            /* Golden yellow */
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer Styles */
-        footer {
-            background: #333D51;
-            /* Dark blue-gray */
-            color: #CBD0D8;
-            /* Light gray */
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Robot Styles */
-        .robot {
-            position: absolute;
-            left: 0;
-            top: 15.5%;
-            transform: translateY(-50%);
-            width: 100px;
-            transition: all 2s ease-in-out;
-        }
-
-        .robot.move-to-terminal {
-            left: 15%;
-            top: 15.5%;
-            transform: translateY(-50%);
-        }
-
-        .robot.move-back {
-            left: 0;
-        }
-
-        /* Media Query for Mobile Devices */
-        @media (max-width: 1700px) {
-            .robot {
-                display: none;
-            }
-        }
-
-        /* Project Section Styles */
-        #projects {
-            text-align: center;
-        }
-
-        .project-container {
-            position: relative;
-            width: 90%;
-            margin: 2rem auto;
-            overflow: hidden;
-        }
-
-        .project-list {
-            display: flex;
-            justify-content: flex-start;
-            transition: transform 0.5s ease;
-            gap: 20px;
-        }
-
-        .project-card {
-            background-color: #333D51;
-            color: #f3c015;
-            padding: 1rem 2rem;
-            font-size: 1.5rem;
-            cursor: auto;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            min-width: 250px;
-            min-height: 200pt;
-            text-align: center;
-        }
-
-        .project-card p {
-            color: #f3c015 !important;
-        }
-
-        .project-card:hover {
-            background-color: #f3c015;
-        }
-
-        .project-card:hover p {
-            color: #333D51 !important;
-        }
-
-
-        .project-card-img {
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        .buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-
-        button {
-            background-color: transparent;
-            /* Transparent background */
-            color: #f3c015;
-            /* Dark text color */
-            padding: 0.5rem 0.8rem;
-            /* Padding for size */
-            border: 2px solid #f3c015;
-            /* Dark border */
-            cursor: pointer;
-            font-size: 1.5rem;
-            /* Font size */
-            border-radius: 50px;
-            /* Rounded corners */
-            transition: all 0.3s ease;
-            /* Smooth transition */
-            font-weight: normal;
-            /* Make text less bold */
-        }
-
-        button:hover {
-            background-color: #f3c015;
-            /* Golden yellow background on hover */
-            color: #333D51;
-            /* Dark text color on hover */
-            border-color: #f3c015;
-            /* Change border color to match background */
-        }
-
-        .container p:last-child {
-            margin-top: 15px;
-            font-size: 1.2em;
-            /* Lagano povećanje fonta */
-            color: #555;
-            /* Suptilna siva boja */
-        }
-
-        .nav-icons {
-            display: flex;
-            /* Postavlja roditelja u flex konteiner */
-            justify-content: center;
-            /* Poravnava sve stavke horizontalno u sredinu */
-            align-items: center;
-            /* Poravnava stavke vertikalno u sredinu, u slučaju da imaju različite visine */
-        }
-
-        .nav-icons a {
-            color: #f3c015;
-            font-size: 1.5rem;
-            margin-left: 17px;
-            align-self: center;
-            /* Obezbeđuje da je svaki link centriran ako je potrebno */
-            text-decoration: none;
-            /* Da bi uklonili podvlačenje sa linkova, ako želite */
-        }
-
-        .nav-icons a:hover {
-            color: #333D51;
-        }
-
-        /* Skills Section */
-        .skills {
-            text-align: center;
-            padding: 0.8rem 0.3rem;
-            /* Smanjen padding sekcije */
-            background-color: #f4f4f4;
-            margin-bottom: 1.0rem;
-            /* Smanjena donja margina sekcije */
-        }
-
-        .skills h2 {
-            font-size: 1.8rem;
-            /* Smanjena veličina naslova */
-            color: #333;
-            margin-bottom: 0.4rem;
-            /* Smanjena margina ispod naslova */
-        }
-
-        .skills-icons {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            /* Smanjen minimum za kolone */
-            gap: 0.8rem;
-            /* Smanjen razmak između ikonica */
-        }
-
-        .skill {
-            text-align: center;
-            padding: 0.4rem;
-            /* Smanjen padding unutar svakog polja */
-            background-color: #fff;
-            border-radius: 8px;
-            /* Lagano smanjeno zaobljenje */
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            /* Lagano smanjen senka efekat */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 0.6rem;
-            /* Smanjena donja margina između svakog skill polja */
-        }
-
-        .skill:hover {
-            transform: translateY(-3px);
-            /* Manje pomeranje pri hover efektu */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            /* Manje intenzivna senka pri hover efektu */
-        }
-
-        .skill i {
-            font-size: 1.8rem;
-            /* Smanjena veličina ikonica */
-            color: #f3c015;
-            transition: color 0.3s ease;
-        }
-
-        .skill p {
-            font-size: 0.65rem;
-            /* Smanjena veličina opisa */
-            color: #333;
-            margin-top: 0.2rem;
-            /* Dodata mala margina iznad opisa */
-        }
-
-        .skill:hover i {
-            color: #333D51;
-        }
-
-
-        @media (max-width: 768px) {
-            .skills h2 {
-                font-size: 1.8rem;
-                /* Smanjena veličina naslova na manjim ekranima */
-            }
-
-            .skills-icons {
-                grid-template-columns: 1fr 1fr;
-                /* Dve kolone na manjim ekranima */
-            }
-        }
-
-        .dots {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .dot {
-            display: inline-block;
-            height: 10px;
-            width: 10px;
-            margin: 0 5px;
-            border-radius: 50%;
-            background-color: #bbb;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .dot.active {
-            background-color: #f3c015;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -551,32 +142,83 @@
         <div class="project-container">
             <div class="project-list">
                 <div class="project-card">
-                    <img class="project-card-img" src="test.jpg" alt="Autonomous Vehicle">
-                    <p>Robo Imitate</p>
+
+                    <div class="card-front">
+                        <img class="project-card-img" src="pick_object.gif" alt="Autonomous Vehicle">
+                        <p>Robo Imitate</p>
+                        <button class="more-btn" onclick="flipCard(this)">More</button>
+                    </div>
+                    <div class="card-back">
+                        <p class="project-description ">Detailed project description here...Put basic description for
+                            projekt and what is main goal!</p>
+                        <button class="back-btn" onclick="unflipCard(this)">Back</button>
+                    </div>
                 </div>
+
                 <div class="project-card">
-                    <img class="project-card-img" src="test.jpg" src="test.jpg" alt="Robot Manipulator Control">
-                    <p>Mep3</p>
+                    <div class="card-front">
+                        <img class="project-card-img" src="pick_object.gif" alt="Autonomous Vehicle">
+                        <p>Mep3</p>
+                        <button class="more-btn" onclick="flipCard(this)">More</button>
+                    </div>
+                    <div class="card-back">
+                        <p class="project-description ">Detailed project description here...Put basic description for
+                            projekt and what is main goal!</p>
+                        <button class="back-btn" onclick="unflipCard(this)">Back</button>
+                    </div>
                 </div>
+
+
                 <div class="project-card">
-                    <img class="project-card-img" src="test.jpg" src="eurobot_competition.jpg"
-                        alt="Eurobot Competition">
-                    <p>Visual Navigation</p>
+                    <div class="card-front">
+                        <img class="project-card-img" src="pick_object.gif" alt="Autonomous Vehicle">
+                        <p>Visual Navigation</p>
+                        <button class="more-btn" onclick="flipCard(this)">More</button>
+                    </div>
+                    <div class="card-back">
+                        <p class="project-description ">Detailed project description here...Put basic description for
+                            projekt and what is main goal!</p>
+                        <button class="back-btn" onclick="unflipCard(this)">Back</button>
+                    </div>
                 </div>
+
                 <div class="project-card">
-                    <img class="project-card-img" src="test.jpg" src="advanced_manipulation.jpg"
-                        alt="Advanced Manipulation">
-                    <p>Bosch Car (BFMC)</p>
+                    <div class="card-front">
+                        <img class="project-card-img" src="pick_object.gif" alt="Autonomous Vehicle">
+                        <p>Bosch Car (BFMC)</p>
+                        <button class="more-btn" onclick="flipCard(this)">More</button>
+                    </div>
+                    <div class="card-back">
+                        <p class="project-description ">Detailed project description here...Put basic description for
+                            projekt and what is main goal!</p>
+                        <button class="back-btn" onclick="unflipCard(this)">Back</button>
+                    </div>
                 </div>
+
                 <div class="project-card">
-                    <img class="project-card-img" src="test.jpg" src="smart_navigation.jpg"
-                        alt="Smart Navigation System">
-                    <p>SOTIS</p>
+                    <div class="card-front">
+                        <img class="project-card-img" src="pick_object.gif" alt="Autonomous Vehicle">
+                        <p>SOTIS</p>
+                        <button class="more-btn" onclick="flipCard(this)">More</button>
+                    </div>
+                    <div class="card-back">
+                        <p class="project-description ">Detailed project description here...Put basic description for
+                            projekt and what is main goal!</p>
+                        <button class="back-btn" onclick="unflipCard(this)">Back</button>
+                    </div>
                 </div>
+
                 <div class="project-card">
-                    <img class="project-card-img" src="test.jpg" src="robotic_arm.jpg"
-                        alt="Robotic Arm for Object Picking">
-                    <p>Object Detection</p>
+                    <div class="card-front">
+                        <img class="project-card-img" src="pick_object.gif" alt="Autonomous Vehicle">
+                        <p>Object Detection</p>
+                        <button class="more-btn" onclick="flipCard(this)">More</button>
+                    </div>
+                    <div class="card-back">
+                        <p class="project-description ">Detailed project description here...Put basic description for
+                            projekt and what is main goal!</p>
+                        <button class="back-btn" onclick="unflipCard(this)">Back</button>
+                    </div>
                 </div>
             </div>
             <div class="buttons">
@@ -716,6 +358,16 @@
         });
         updateDots();
 
+
+        function flipCard(button) {
+            const card = button.closest('.project-card');
+            card.classList.add('flipped');
+        }
+
+        function unflipCard(button) {
+            const card = button.closest('.project-card');
+            card.classList.remove('flipped');
+        }
 
 
 
