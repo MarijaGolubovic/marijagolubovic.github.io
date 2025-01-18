@@ -237,6 +237,7 @@
  .back-btn:hover {
      background-color: #f3c015;
      color: #333D51;
+     align-self: left;
  }
 
  .card-back {
@@ -257,6 +258,25 @@
      text-align: center;
  }
 
+ .buttons-container {
+     display: flex;
+     justify-content: start;
+     gap: 170px;
+     margin-top: 10px;
+ }
+
+ .git-link {
+     display: inline-block;
+     color: #333D51;
+     font-size: 2rem;
+     text-decoration: none;
+     transition: color 0.3s;
+ }
+
+ .git-link i {
+     font-size: 1.5rem;
+ }
+
  .more-btn {
      background: transparent;
      border: none;
@@ -266,13 +286,15 @@
      text-decoration: underline;
      padding: 0%;
  }
- .more-btn:hover{
-    background-color: #333D51;
-    color: #f3c015;
-    text-decoration: none;
+
+ .more-btn:hover {
+     background-color: #333D51;
+     color: #f3c015;
+     text-decoration: none;
  }
+
  .project-description {
-    font-size: 1rem;
+     font-size: 1rem;
 
  }
 
