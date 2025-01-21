@@ -524,3 +524,27 @@
      font-size: 12px;
      text-transform: uppercase;
  }
+
+ .details-link {
+     background: none;
+     border: none;
+     color: #0056b3;
+     text-decoration: underline;
+     cursor: pointer;
+     padding: 0;
+     font-size: 1em;
+ }
+
+ .details-link:hover {
+     background-color: white;
+     color: #0056b3;
+     text-decoration: none;
+ }
+
+
+ .details {
+     display: none;
+     font-size: inherit;
+    font-weight: inherit;
+
+ }
