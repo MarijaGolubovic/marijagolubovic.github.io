@@ -153,7 +153,7 @@
                         algorithms for robot control, setting up simulation
                         environments, and creating custom solutions for autonomous navigation.
                     </span>
-                    <button class="details-link" onclick="toggleDetails(this)">More</button>
+                    <button class="details-link" onclick="toggleDetails(this)">more</button>
                 </p>
             </div>
             <div class="tags">
@@ -176,7 +176,7 @@
                         algorithms for robot control, setting up simulation
                         environments, and creating custom solutions for autonomous navigation.
                     </span>
-                    <button class="details-link" onclick="toggleDetails(this)">More</button>
+                    <button class="details-link" onclick="toggleDetails(this)">more</button>
                 </p>
             </div>
             <div class="tags">
@@ -197,7 +197,7 @@
                         algorithms for robot control, setting up simulation
                         environments, and creating custom solutions for autonomous navigation.
                     </span>
-                    <button class="details-link" onclick="toggleDetails(this)">More</button>
+                    <button class="details-link" onclick="toggleDetails(this)">more</button>
                 </p>
             </div>
             <div class="tags">
@@ -217,7 +217,7 @@
                         algorithms for robot control, setting up simulation
                         environments, and creating custom solutions for autonomous navigation.
                     </span>
-                    <button class="details-link" onclick="toggleDetails(this)">More</button>
+                    <button class="details-link" onclick="toggleDetails(this)">more</button>
                 </p>
             </div>
             <div class="tags">
@@ -237,7 +237,7 @@
                         algorithms for robot control, setting up simulation
                         environments, and creating custom solutions for autonomous navigation.
                     </span>
-                    <button class="details-link" onclick="toggleDetails(this)">More</button>
+                    <button class="details-link" onclick="toggleDetails(this)">more</button>
                 </p>
             </div>
             <div class="tags">
@@ -522,24 +522,13 @@
 
 
         function toggleDetails(button) {
-            const details = button.previousElementSibling;
-            if (details.style.display === "none" || details.style.display === "") {
-                details.style.display = "block";
-                button.textContent = "Less"; // Menja tekst dugmeta
-            } else {
-                details.style.display = "none";
-                button.textContent = "More"; // Vraća na početni tekst
-            }
-        }
-
-        function toggleDetails(button) {
             const details = button.previousElementSibling; // Dohvata prethodni element (skriveni tekst)
             if (details.style.display === "none" || details.style.display === "") {
                 details.style.display = "inline"; // Prikazuje tekst u istoj liniji
-                button.textContent = "Less"; // Menja tekst dugmeta
+                button.textContent = "less"; // Menja tekst dugmeta
             } else {
                 details.style.display = "none"; // Sakriva tekst
-                button.textContent = "More"; // Vraća na početni tekst
+                button.textContent = "more"; // Vraća na početni tekst
             }
         }
 
