@@ -501,8 +501,8 @@
  }
 
  .employment-item p {
-     margin: 10px 0;
-     font-size: 14px;
+     margin: 5px 0;
+     font-size: 18px;
      color: #555;
  }
 
@@ -510,6 +510,22 @@
      font-weight: bold;
      color: #6b705c;
  }
+
+ /* Media query for smaller devices */
+ @media (max-width: 768px) {
+     .employment-item h3 {
+         font-size: 18px;
+     }
+
+     .employment-item p {
+         font-size: 16px;
+     }
+
+     .employment-item span {
+         font-size: 14px;
+     }
+ }
+
 
  .tags {
      display: flex;
@@ -545,17 +561,17 @@
  .details {
      display: none;
      font-size: inherit;
-    font-weight: inherit;
+     font-weight: inherit;
 
  }
- 
+
  .contact-text {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #333;
-    line-height: 1.4;
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
-    letter-spacing: 1px;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
-}
+     font-size: 1.4rem;
+     font-weight: 500;
+     color: #333;
+     line-height: 1.4;
+     margin-bottom: 20px;
+     font-family: 'Arial', sans-serif;
+     letter-spacing: 1px;
+     transition: color 0.3s ease, text-decoration 0.3s ease;
+ }
