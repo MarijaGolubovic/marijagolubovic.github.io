@@ -190,24 +190,30 @@
  }
 
  .project-card {
-     background-color: #333D51;
-     color: #f3c015;
-     padding: 1rem 2rem;
-     font-size: 1.5rem;
-     cursor: pointer;
-     border-radius: 8px;
-     transition: background-color 0.3s ease;
-     min-width: 250px;
-     min-height: 200px;
-     text-align: center;
-     transform-style: preserve-3d;
-     transition: transform 0.6s;
-     position: relative;
- }
+    background-color: white;
+    border: 3px solid #333D51;
+    color: #f3c015;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    min-width: 250px;
+    min-height: 260px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    position: relative;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 
  .project-card-img {
      width: 100%;
      border-radius: 5px;
+     border-style: solid;
+     border-color: #333D51;
+     border-width: 1px;
  }
 
  .buttons {
@@ -285,14 +291,15 @@
      transform: translateX(-50%);
      background: none;
      border: none;
-     color: #f3c015;
+     /* color: #f3c015; */
+     color: rgb(33, 50, 83);
      font-size: 1rem;
      cursor: pointer;
      text-decoration: underline;
  }
 
  .more-btn:hover {
-     background-color: #333D51;
+     background-color: white;
      color: #f3c015;
      text-decoration: none;
  }
