@@ -8,6 +8,11 @@
      position: relative;
  }
 
+body .background {
+     position: absolute;
+     z-index: -1;
+ }
+
  .container {
      width: 90%;
      max-width: 1100px;
@@ -190,22 +195,22 @@
  }
 
  .project-card {
-    background-color: white;
-    border: 3px solid #333D51;
-    color: #f3c015;
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    min-width: 250px;
-    min-height: 260px;
-    text-align: center;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-    position: relative;
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
-}
+     background-color: white;
+     border: 3px solid #333D51;
+     color: #f3c015;
+     padding: 1rem 2rem;
+     font-size: 1.5rem;
+     cursor: pointer;
+     border-radius: 8px;
+     transition: background-color 0.3s ease;
+     min-width: 250px;
+     min-height: 260px;
+     text-align: center;
+     transform-style: preserve-3d;
+     transition: transform 0.6s;
+     position: relative;
+     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+ }
 
 
  .project-card-img {
