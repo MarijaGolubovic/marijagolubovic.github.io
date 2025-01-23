@@ -8,7 +8,7 @@
      position: relative;
  }
 
-body .background {
+ body .background {
      position: absolute;
      z-index: -1;
  }
@@ -198,13 +198,13 @@ body .background {
      background-color: white;
      border: 3px solid #333D51;
      color: #f3c015;
-     padding: 1rem 2rem;
-     font-size: 1.5rem;
+     padding: 0.8rem 1.4rem;
+     font-size: 1.9rem;
      cursor: pointer;
      border-radius: 8px;
      transition: background-color 0.3s ease;
      min-width: 250px;
-     min-height: 260px;
+     min-height: 400px;
      text-align: center;
      transform-style: preserve-3d;
      transition: transform 0.6s;
@@ -253,22 +253,20 @@ body .background {
  }
 
  .card-back {
-     background-color: #f3c015;
-     color: #333D51;
+     background-color: #333D51;
+     color: #CBD0D8;
      transform: rotateY(180deg);
      position: absolute;
      top: 0;
      left: 0;
      right: 0;
      bottom: 0;
-     padding: 1rem;
+     padding: 0.8rem;
      border-radius: 8px;
      box-sizing: border-box;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     text-align: center;
  }
+
+
 
  .buttons-container {
      display: flex;
@@ -287,6 +285,10 @@ body .background {
 
  .git-link i {
      font-size: 1.5rem;
+ }
+
+ .git-link i:hover {
+     color: #f3c015;
  }
 
  .more-btn {
@@ -311,16 +313,31 @@ body .background {
 
  .project-description {
      font-size: 1rem;
+     text-align: justify;
+     line-height: 1.25;
+     font-family: Arial, sans-serif;
+     word-wrap: break-word;
+     overflow-wrap: break-word;
+     white-space: normal;
 
  }
 
  .back-btn {
      background: transparent;
      border: none;
-     color: #333D51;
+     color: #CBD0D8;
      font-size: 1rem;
      cursor: pointer;
      text-decoration: underline;
+ }
+
+ .back-btn:hover {
+     background-color: #333D51;
+     color: #f3c015;
+ }
+
+ .git-link i:hover {
+     color: #f3c015;
  }
 
  .project-card.flipped .card-back {

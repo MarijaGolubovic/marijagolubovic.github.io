@@ -36,7 +36,7 @@ typeText();
 // ***************************************************************
 const cards = document.querySelectorAll('.project-card');
 let offset = cards[0].offsetWidth;
-let cardWidth = cards[0].offsetWidth + 20;
+let cardWidth = cards[0].offsetWidth + 30;
 const dotsContainer = document.getElementById('dots');
 const maxIndex = 3;
 
@@ -76,7 +76,7 @@ function moveCards(direction) {
         offset -= cardWidth;
     }
 
-    const moveBy = -currentIndex * (cards[0].offsetWidth + 20); // Calculate how much to move
+    const moveBy = -currentIndex * (cards[0].offsetWidth + 30); // Calculate how much to move
     projectList.style.transform = `translateX(${moveBy}px)`;
     updateDots();
 }
@@ -92,7 +92,7 @@ document.querySelector('.project-container').addEventListener('wheel', function 
         updateDots();
 
     }
-    e.preventDefault(); // Prevent the default scroll behavior
+    e.preventDefault();
 });
 updateDots();
 
@@ -114,13 +114,13 @@ function unflipCard(button) {
 
 
 function toggleDetails(button) {
-    const details = button.previousElementSibling; // Dohvata prethodni element (skriveni tekst)
+    const details = button.previousElementSibling;
     if (details.style.display === "none" || details.style.display === "") {
-        details.style.display = "inline"; // Prikazuje tekst u istoj liniji
-        button.textContent = "less"; // Menja tekst dugmeta
+        details.style.display = "inline";
+        button.textContent = "less";
     } else {
-        details.style.display = "none"; // Sakriva tekst
-        button.textContent = "more"; // Vraća na početni tekst
+        details.style.display = "none";
+        button.textContent = "more";
     }
 }
 
