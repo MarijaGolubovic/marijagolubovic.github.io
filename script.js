@@ -38,7 +38,12 @@ const cards = document.querySelectorAll('.project-card');
 let offset = cards[0].offsetWidth;
 let cardWidth = cards[0].offsetWidth + 30;
 const dotsContainer = document.getElementById('dots');
-const maxIndex = 3;
+let maxIndex;
+if (window.innerWidth <= 768) {
+maxIndex=1;
+}else{
+    maxIndex = 3;
+}
 
 const dots = [];
 
@@ -77,14 +82,23 @@ function moveCards(direction) {
     }
     let moveBy;
     if (window.innerWidth <= 768) {
-        moveBy = -currentIndex * (cards[0].offsetWidth + 250); // Calculate how much to move
+        moveBy = -currentIndex * (cards[0].offsetWidth + 10); // Calculate how much to move
 
     }
     else {
-        moveBy = -currentIndex * (cards[0].offsetWidth + 30); // Calculate how much to move
+        if(direction === 'right'){
+        moveBy = -currentIndex * (cards[0].offsetWidth)- 20; // Calculate how much to move
+        }else{
+        moveBy = -currentIndex * (cards[0].offsetWidth)+ 20; // Calculate how much to move
+
+        }
     }
     projectList.style.transform = `translateX(${moveBy}px)`;
-    updateDots();
+    if (currentIndex < totalCards - 1 || currentIndex > 0) {
+        // updateDots();
+        console.log(currentIndex, totalCards-1)
+
+    }
 }
 
 // Function to handle scroll event to move cards left or right
