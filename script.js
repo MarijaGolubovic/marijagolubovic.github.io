@@ -94,10 +94,6 @@ function moveCards(direction) {
         if (direction === 'left') {
             moveBy = -currentIndex * (cards[0].offsetWidth) - 15*currentIndex; // Calculate how much to move
         }
-        // else {
-        //     moveBy = -currentIndex * (cards[0].offsetWidth) + 25; // Calculate how much to move
-
-        // }
     }
     else {
         if (direction === 'right') {
