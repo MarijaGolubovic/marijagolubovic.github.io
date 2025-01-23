@@ -39,15 +39,16 @@ let offset = cards[0].offsetWidth;
 let cardWidth = cards[0].offsetWidth + 30;
 const dotsContainer = document.getElementById('dots');
 let maxIndex;
+let dotsNum;
 if (window.innerWidth <= 768) {
-maxIndex=1;
-}else{
+    maxIndex = 1;
+    dotsNum = 6;
+} else {
     maxIndex = 3;
+    dotsNum = 3;
 }
 
 const dots = [];
-
-const dotsNum = 3;
 
 for (let i = 0; i < dotsNum; i++) {
     const dot = document.createElement('span');
@@ -58,8 +59,13 @@ for (let i = 0; i < dotsNum; i++) {
 
 function updateDots() {
     dots.forEach(dot => dot.classList.remove('active'));
-    let width = cards[0].offsetWidth + 20;
-    dots[Math.floor(Math.abs(offset) / width)].classList.add('active');
+    if (dotsNum == 6) {
+        dots[currentIndex].classList.add('active');
+    }
+    else {
+        let width = cards[0].offsetWidth + 20;
+        dots[Math.floor(Math.abs(offset) / width)].classList.add('active');
+    }
 }
 
 
@@ -82,23 +88,19 @@ function moveCards(direction) {
     }
     let moveBy;
     if (window.innerWidth <= 768) {
-        moveBy = -currentIndex * (cards[0].offsetWidth + 10); // Calculate how much to move
+        moveBy = -currentIndex * (cards[0].offsetWidth); // Calculate how much to move
 
     }
     else {
-        if(direction === 'right'){
-        moveBy = -currentIndex * (cards[0].offsetWidth)- 20; // Calculate how much to move
-        }else{
-        moveBy = -currentIndex * (cards[0].offsetWidth)+ 20; // Calculate how much to move
+        if (direction === 'right') {
+            moveBy = -currentIndex * (cards[0].offsetWidth) - 20; // Calculate how much to move
+        } else {
+            moveBy = -currentIndex * (cards[0].offsetWidth) + 20; // Calculate how much to move
 
         }
     }
     projectList.style.transform = `translateX(${moveBy}px)`;
-    if (currentIndex < totalCards - 1 || currentIndex > 0) {
-        // updateDots();
-        console.log(currentIndex, totalCards-1)
-
-    }
+    updateDots()
 }
 
 // Function to handle scroll event to move cards left or right
