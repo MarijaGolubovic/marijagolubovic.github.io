@@ -75,8 +75,14 @@ function moveCards(direction) {
         currentIndex++;
         offset -= cardWidth;
     }
+    let moveBy;
+    if (window.innerWidth <= 768) {
+        moveBy = -currentIndex * (cards[0].offsetWidth + 250); // Calculate how much to move
 
-    const moveBy = -currentIndex * (cards[0].offsetWidth + 30); // Calculate how much to move
+    }
+    else {
+        moveBy = -currentIndex * (cards[0].offsetWidth + 30); // Calculate how much to move
+    }
     projectList.style.transform = `translateX(${moveBy}px)`;
     updateDots();
 }
